@@ -8,6 +8,7 @@ function! agda_input#standard_bind_input(key, result)
     let input = l:agda_input_prefix . substitute(a:key, "|", "<bar>", "g")
 
     exec "silent inoremap " . input . " " . a:result
+    exec "silent cnoremap " . input . " " . a:result
 
     call extend(g:agda_input, {a:key[0:0]: {}}, "keep")
     let rest = ""
